@@ -1,0 +1,31 @@
+#%Module1.0
+# Author: Cerlane Leong
+# Date: 2 Feb 2017
+###
+
+set NAME	taskfarm/pbsdsh
+set VERSION	0.1
+set ROOT	"$::env(HOME)/app/${NAME}/${VERSION}"
+
+setenv TFARM_BASE "$ROOT"
+setenv TFARM_PBSDSH "$ROOT/pbsdsh_taskfarm"
+
+prepend-path      PATH                  $ROOT
+
+module-whatis  "Wrapper to help users to taskfarm their many serial runs as one job"
+
+proc ModulesHelp { } {
+	puts stderr "To use this module"
+	puts stderr "\n\tmodule load taskfarm/pbsdsh"
+	puts stderr "\tpbsdsh \$TFARM_PBSDSH {no of nodes} {full path to file containing tasks}" 
+	puts stderr "\nIn the file containing the tasks. The commands to execute on each core should be in one line."
+        puts stderr "As environment settings are not forwarded by pbsdsh, you will have to reload your modules environment on each line of the file."
+        puts stderr "\nE.g. of file"
+	puts stderr "\tmodule load python; cd \$SCRATCH/abc; python mycode"
+        puts stderr "\tmodule load python; cd \$SCRATCH/def; python mycode2"
+	puts stderr "\n\nRuntime logs of this modules will be available in the working directory where the qsub command was executed (\$PBS_O_WORKDIR/.taskfarm/\$PBS_JOBID.log)"
+	puts stderr "\n----------------------------------------------------------------"
+}
+
+
+

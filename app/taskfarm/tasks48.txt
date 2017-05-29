@@ -1,0 +1,48 @@
+. /etc/profile; . /etc/profile.d/modules.sh; module load python; python --version; lscpu | grep "Model name"
+. /etc/profile; . /etc/profile.d/modules.sh; module load python; python --version; lscpu | grep "Architecture"
+lscpu  | grep "Byte Order" 
+echo "NODE:" $PBS_NODENUM;
+echo "FILE: " $PBS_NODEFILE
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+lscpu | grep "Model name"
+lscpu | grep "Architecture"
+lscpu  | grep "Byte Order"
+echo "NODE: " $PBS_NODENUM
+echo "FILE: " $PBS_NODEFILE
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date
+echo $HOSTNAME; date

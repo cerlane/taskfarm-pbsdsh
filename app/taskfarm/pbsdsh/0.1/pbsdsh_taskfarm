@@ -1,0 +1,55 @@
+#!/bin/bash
+
+# Author : Cerlane Leong
+# Date : 22 Feb 2017
+
+TFILE=$2
+nnodes=$1
+
+UTFHOME=${PBS_O_WORKDIR}/taskfarm #$HOME/.taskfarm
+mkdir -p $UTFHOME
+LOGFILE=$UTFHOME/$PBS_JOBID.log
+
+ntasks=`cat $TFILE | wc -l`
+usedcpuNode=`echo "scale=1;($ntasks/$nnodes)" | bc | awk '{printf("%d\n",$0+=$0<0?0:0.9)}'`
+j=$PBS_NODENUM;
+#echo "number of nodes: " $(qstat -f $PBS_JOBID | grep Resource_List.nodect | cut -d'=' -f2 | tr -d '[:space:]')  >> $LOGFILE 
+
+k_start=$((($j * $usedcpuNode) +1))
+k_end=$((($j+1) * $usedcpuNode ))
+
+if [ "$k_end" -gt "$ntasks" ];
+then
+  k_end=$ntasks;
+fi
+#echo $k_end >> $LOGFILE
+
+n=0;
+for m in `seq $k_start $k_end`;
+do
+  LINE=`head -n+${m} < ${TFILE} | tail -n1`
+  tfilename="$UTFHOME/${PBS_JOBID}_tt.$j.$n"
+  echo ". /etc/profile; . /etc/profile.d/modules.sh; $LINE"  > $tfilename
+  chmod u+x $tfilename
+
+  taskset -c $n $tfilename >> $LOGFILE & pid=$!
+  PID_LIST+=" $pid";
+
+  n=$(($n + 1));
+done
+
+#for cmd in "$@"; do {
+#  echo "Process \"$cmd\" started";
+#  $cmd & pid=$!
+#  PID_LIST+=" $pid";
+#} done
+
+trap "kill $PID_LIST" SIGINT
+
+#echo "Parallel processes have started";
+
+wait $PID_LIST
+
+rm $UTFHOME/${PBS_JOBID}_tt.$j.*
+#echo
+#echo "All processes have completed";

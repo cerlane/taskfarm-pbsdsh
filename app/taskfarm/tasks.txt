@@ -1,0 +1,24 @@
+ifconfig eth0 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1
+lscpu | grep "Architecture"
+lscpu  | grep "Byte Order" 
+ifconfig eth0 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1
+ifconfig eth0 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1
+ifconfig eth0 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1
+ifconfig eth0 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1
+ifconfig eth0 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1
+ifconfig eth0 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1
+ifconfig eth0 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1
+ifconfig eth0 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1
+ifconfig eth0 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1
+ifconfig eth0 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1
+ifconfig eth0 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1
+ifconfig eth0 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1
+ifconfig eth0 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1
+ifconfig eth0 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1
+ifconfig eth0 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1
+ifconfig eth0 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1
+ifconfig eth0 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1
+ifconfig eth0 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1
+ifconfig eth0 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1
+ifconfig eth0 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1
+ifconfig eth0 | grep "inet\ addr" | cut -d: -f2 | cut -d" " -f1
