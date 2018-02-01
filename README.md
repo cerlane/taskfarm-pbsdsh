@@ -2,6 +2,8 @@
 
 This taskfarm script and environment module for PBS PRO is meant for one to run multiple independent tasks on one single and/or multiple nodes. Each task can use one core or multiple cores as per required. Each task is however limited to run within one node. 
 
+This is particularly useful for users who would like to run multiple ML (machine learning) jobs on multiple GPUs that are on different computer nodes. Please note that the GPU jobs are expected to be embarrassingly parallel. 
+
 ## modules folder
 
 This folder contains the module environment setup file (modules/taskfarm/pbsdsh/0.1). You can install "taskfarm" folder in the modules folder in any folders in your system, which is the $MODULESPATH.
@@ -30,12 +32,20 @@ As environment settings are not forwarded by pbsdsh, you will have to reload you
 
 E.g. of file
 	module load python; cd $SCRATCH/abc; python mycode
+	
 	module load python; cd $SCRATCH/def; python mycode2
+	
 
 If you would like to use different number of cores for each task, simply do the following:
+
 E.g. of file
+
 	module load IntelMpi; cd $SCRATCH/abc; mpirun -np 4 mycode
+	
 	module load IntelMpi; cd $SCRATCH/def; mpirun -np 8 mycode2
+	
 NOTE: Each task is however limited to run within a single node, i.e. cannot run across nodes.
 
-Runtime logs of this modules will be available in the working directory where the qsub command was executed ($PBS_O_WORKDIR/.taskfarm/$PBS_JOBID.log)
+Runtime logs of this modules will be available in the working directory where the qsub command was executed 
+
+($PBS_O_WORKDIR/.taskfarm/$PBS_JOBID.log)
