@@ -31,6 +31,7 @@ In the file containing the tasks. The commands to execute on each core should be
 As environment settings are not forwarded by pbsdsh, you will have to reload your modules environment on each line of the file.
 
 E.g. of file
+	
 	module load python; cd $SCRATCH/abc; python mycode
 	
 	module load python; cd $SCRATCH/def; python mycode2
