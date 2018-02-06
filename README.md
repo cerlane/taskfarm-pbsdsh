@@ -35,6 +35,8 @@ E.g. of file
 	
 	module load python; cd $SCRATCH/def; python mycode2
 	
+	module load python; cd $SCRATCH/hij; python mycode3
+	
 
 If you would like to use different number of cores for each task, simply do the following:
 
