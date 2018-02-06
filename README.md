@@ -32,11 +32,11 @@ As environment settings are not forwarded by pbsdsh, you will have to reload you
 
 E.g. of file
 	
-	module load python; cd $SCRATCH/abc; python mycode
+	module load python; cd $SCRATCH/abc; python mycode.py
 	
-	module load python; cd $SCRATCH/def; python mycode2
+	module load python; cd $SCRATCH/def; python mycode2.py
 	
-	module load python; cd $SCRATCH/hij; python mycode3
+	module load python; cd $SCRATCH/hij; python mycode3.py
 	
 
 If you would like to use different number of cores for each task, simply do the following:
